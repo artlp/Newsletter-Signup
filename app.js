@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 const bodyParser = require("body-parser");
 const request = require("request");
 // const res = require('express/lib/response');
@@ -66,8 +66,8 @@ app.post("/failure", function(req, res){
 })
 
 
-app.listen(3000, function () {
-    console.log("Server is running on port 3000.");
+app.listen(port || 3000, function () {
+    console.log("Server is running on port " + port);
 })
 
 // unisender api 619kd66drkh9jk1nrchs7sxute65d5mecxbrd78e
